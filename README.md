@@ -46,6 +46,10 @@ Enter an operation and an args list:
   * 1st arg = sender legal entity hash
   * 2nd arg = will or inheritage hash
   * 3nd arg = extra legal entity hash
+  
+The contract was developed and tested with the neo-python-privatenet, but there is now a deployed contract on the NEO testnet with the hash `0x5a8549de307df54af7c7259eb2cf922d495de0e3` which was deployed with gui-developer. 
+ 
+Please write issues for questions.
 
 ## roadmap
   * a threading issue with the `reactor` module must be fixed to use the GUI with blocks
