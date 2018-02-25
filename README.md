@@ -20,7 +20,7 @@ https://youtu.be/ajjCcCNYcV0
 </p>
 
 ### how to install
-  * install neo-python
+  * install neo-python and PyQt5
   * copy `prompty.py` and `gui_memory.json` into neo-python/
   * copy the HelperGUI directory to neo-python/neo/Prompt
 
