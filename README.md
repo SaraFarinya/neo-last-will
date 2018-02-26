@@ -1,6 +1,6 @@
 # neo-last-will
 
-Use the blockchain to empower old people to administer their legacy in a secure and permanent way.
+Use the blockchain to empower old people to administer their legacy in a permanent and lasting way. Enable anyone to use smart technology and feel secure about what happens after they are not around anymore.
 
 <p align="center">
  <img src="https://i.imgur.com/rVA7z2Q.png" width="500" height="500">
@@ -13,6 +13,9 @@ Watch the demo video:
 
 <p align="center">
 https://youtu.be/ajjCcCNYcV0
+</p>
+
+<p>
 </p>
 
 <p align="center">
