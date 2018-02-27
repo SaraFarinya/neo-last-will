@@ -17,9 +17,9 @@ https://youtu.be/ajjCcCNYcV0
 
 Screenshot of video:
 
-**<p align="center">
+<p align="center">
  <img src="https://i.imgur.com/MQ4oEVK.jpg">
-</p>**
+</p>
 
 ### how to install
   * install neo-python and PyQt5
