@@ -27,17 +27,14 @@ https://youtu.be/ajjCcCNYcV0
   * copy `prompty.py` and `gui_memory.json` into neo-python/
   * copy the HelperGUI directory to neo-python/neo/Prompt
 
-Note: On the last dApp day, a new neo-python branch was merged in that changed code around the exiting of the reactor module. There is also a new line for the gui, but merging those requiring fixing a threading issue first which I'll have to fix and push later. For those reading this in some time after this day, just copypaste the just lines from the prompt.py - it's just 12 new lines and I've marked those with a tag in a comment `# >>>`. If people like the gui, I can make a PR too. Right now I'm working on more hotkeys and direct SC support functionality. Basically, the only difference is the following code branch in `prompt.py`:
+Note: On the last dApp day, a new neo-python branch was merged in, which changed code around the closing of the reactor module. There is also a new line for the gui there, but merging those requires fixing a threading issue first which I have to fix and push later. For those reading this in some time after this day, simply copypaste the lines from the prompt.py - it's just 10 new lines and I've marked those with a tag in a comment `# >>>`. If people like the gui, I can make a PR too. Right now I'm working on more hotkeys and direct SC support functionality. Basically, the only difference is the following code branch in `prompt.py`:
 ```python
        while self.go_on: # >>>
             if self.gui_on:
-                print('gui> ')
-                self.show()
-                result = self.gui_result()
+                result = self.gui_result("gui> ")
             else:
                 try:
-                    result = prompt("neo> ", 
-                    ...
+                    result = prompt("neo> ", ...
 ```
 If you're not on a Mac, to have the gui listen to keyboard keys (the Enter and Escape key in particular), you might have to change the OS dependent config file found in the HelperGUI folder. 
 
