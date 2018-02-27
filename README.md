@@ -12,14 +12,14 @@ The neo-python cli can be operated with the graphical user interface. The gui al
 Watch the demo video:
 
 <p align="center">
-**https://youtu.be/ajjCcCNYcV0**
+https://youtu.be/ajjCcCNYcV0
 </p>
 
 Screenshot of video:
 
-<p align="center">
+**<p align="center">
  <img src="https://i.imgur.com/MQ4oEVK.jpg">
-</p>
+</p>**
 
 ### how to install
   * install neo-python and PyQt5
