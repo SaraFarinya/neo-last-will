@@ -20,7 +20,11 @@ class HelperGUI(MainWindow):
 
         self.wait_for_enter = True
 
-    def gui_result(self): # to be called from the cli loop
+    def gui_result(self, prompt):
+        
+        print(prompt) # >>>
+        
+        self.show() # >>>
         self.raise_() # >>>
 
         while self.wait_for_enter:
