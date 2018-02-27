@@ -838,10 +838,8 @@ class PromptInterface(HelperGUI): # >>> new parent: object --> HelperGUI
 
         while self.go_on:
             if self.gui_on: # >>> added this new GUI branch:
-                print('gui> ') # >>>
-                self.show() # >>>
-                result = self.gui_result() # >>>
-            else: # >>> here starts the old branch:
+                result = self.gui_result("gui> ") # >>>
+            else:
                 try:
                     result = prompt("neo> ",
                                     completer=self.get_completer(),
