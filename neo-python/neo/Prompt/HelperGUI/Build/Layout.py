@@ -4,36 +4,42 @@ from Config import Rows
 
 
 def layoutMainWindow(self):
-    grid = QGridLayout()
+    """
+    Take all widgets defined in the main widgets function and put them in some order in the gui.
+    """
+    gridShortcut = QGridLayout()
     for i in Rows:
-        grid.addWidget(self.line_buttons[i][0], i, 0)
-        grid.addWidget(self.lines[i][0], i, 1)
-        grid.addWidget(self.lines[i][1], i, 2)
+        gridShortcut.addWidget(self.line_buttons[i][0], i, 0)
+        gridShortcut.addWidget(self.lines[i][0], i, 1)
+        gridShortcut.addWidget(self.lines[i][1], i, 2)
         grid.addWidget(self.line_buttons[i][1], i, 3)
-    grid.setSpacing(10)
+    gridShortcut.setSpacing(10)
 
-    commandHBox = QHBoxLayout()
-    commandHBox.addWidget(self.saveButton)
-    commandHBox.addWidget(self.command_line)
-    commandHBox.addWidget(self.hashButton)
+    hboxCommand = QHBoxLayout()
+    hboxCommand.addWidget(self.saveButton)
+    hboxCommand.addWidget(self.command_line)
+    hboxCommand.addWidget(self.hashButton)
 
     vboxAll = QVBoxLayout()
-    vboxAll.addLayout(grid)
-    vboxAll.addLayout(commandHBox)
+    vboxAll.addLayout(gridShortcut)
+    vboxAll.addLayout(hboxCommand)
 
     self.setLayout(vboxAll)
 
 
 def layoutDocumentWindow(self):
-    computeHBox = QHBoxLayout()
-    computeHBox.addStretch(1)
-    computeHBox.addWidget(self.hashAlgorithmBox)
-    computeHBox.addWidget(self.computeButton)
+    """
+    Take all widgets defined in the document widgets function and put them in some order in the gui.
+    """
+    hboxComputeHash = QHBoxLayout()
+    hboxComputeHash.addStretch(1)
+    hboxComputeHash.addWidget(self.hashAlgorithmBox)
+    hboxComputeHash.addWidget(self.computeButton)
 
     vboxAll = QVBoxLayout()
     vboxAll.addWidget(self.headerLabel)
     vboxAll.addWidget(self.document_line)
     vboxAll.addWidget(self.hash_line)
-    vboxAll.addLayout(computeHBox)
+    vboxAll.addLayout(hboxComputeHash)
 
     self.setLayout(vboxAll)
