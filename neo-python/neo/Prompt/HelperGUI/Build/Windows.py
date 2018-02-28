@@ -44,7 +44,7 @@ class DocumentWindow(QWidget):
     def __init__(self, main_widget):
         QWidget.__init__(self)
 
-        self.main_widget = main_widget
+        self.main_widget = main_widget # back-reference to be used sparingly
         buildDocumentWindow(self)
         layoutDocumentWindow(self)
 
