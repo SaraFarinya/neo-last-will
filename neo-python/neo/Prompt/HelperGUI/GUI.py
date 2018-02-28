@@ -20,17 +20,19 @@ class HelperGUI(MainWindow):
 
         self.wait_for_enter = True
 
-    def gui_result(self, prompt):
+    def gui_result(self, prompt_statement):
         
-        print(prompt) # >>>
+        print(prompt_statement)
         
-        self.show() # >>>
-        self.raise_() # >>>
+        self.show()
+        self.raise_()
 
         while self.wait_for_enter:
             QCoreApplication.processEvents()
             sleep(1/200)
 
         self.wait_for_enter = True
+        
+        result = self.command_line.text()
 
-        return self.command_line.text()
+        return result
