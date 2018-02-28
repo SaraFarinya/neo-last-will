@@ -34,6 +34,15 @@ Basically, the only difference is the following code branch in `prompt.py`:
        else:
             try:
                 result = prompt("neo> ", ...
+                
+       command, arguments = self.input_parser.parse_input(result)
+       ...
+       
+       elif command == 'testinvoke':
+            self.test_invoke_contract(arguments)
+       elif command == 'gui':
+           self.gui_on = True
+       ...
 ```
 If you're not on a Mac, to have the gui listen to keyboard keys (the Enter and Escape key in particular), you might have to change the OS dependent config file found in the HelperGUI folder. 
 
