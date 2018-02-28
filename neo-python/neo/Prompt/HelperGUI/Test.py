@@ -20,9 +20,7 @@ class PromptInterfaceTester(HelperGUI):
 
         while True:
             if self.gui_on:
-                print('gui> ')
-                self.show()
-                command = self.gui_result()
+                command = self.gui_result("gui> ")
             else:
                 command = prompt("neo> ")
 
@@ -35,7 +33,7 @@ class PromptInterfaceTester(HelperGUI):
 
 
 def main():
-
+    
     app = QApplication(sys.argv) # >>> start gui app
 
     cli = PromptInterfaceTester()
