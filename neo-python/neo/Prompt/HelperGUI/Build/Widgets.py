@@ -6,6 +6,9 @@ from Config import Colors, Memory, Cols, Rows
 import Build.Events as Events
 
 def buildMainWindow(self):
+    """
+    Create all the widgets for the main window which are then put in place in the layout function call.
+    """
     self.line_buffers = [['' for _ in Cols] for _ in Rows]
 
     self.command_line = QLineEdit(self)
@@ -21,9 +24,9 @@ def buildMainWindow(self):
     self.hashButton.setStyleSheet(Colors.ButtonLight)
     self.hashButton.setFont(QFont('Helvetica', 16))
 
-    self.lines = [[QLineEdit(self) for i in Cols] for j in Rows]
     def f(self, i, j, text):
         self.line_buffers[i][j] = text
+    self.lines = [[QLineEdit(self) for i in Cols] for j in Rows]
     self.lines[0][0].textChanged[str].connect(lambda text: f(self, 0, 0, text))
     self.lines[1][0].textChanged[str].connect(lambda text: f(self, 1, 0, text))
     self.lines[2][0].textChanged[str].connect(lambda text: f(self, 2, 0, text))
@@ -33,9 +36,9 @@ def buildMainWindow(self):
     self.lines[2][1].textChanged[str].connect(lambda text: f(self, 2, 1, text))
     self.lines[3][1].textChanged[str].connect(lambda text: f(self, 3, 1, text))
 
-    self.line_buttons = [[QPushButton('', self) for i in Cols] for j in Rows]
     def g(self, i, j):
         self.command_line.setText(self.line_buffers[i][j])
+    self.line_buttons = [[QPushButton('', self) for i in Cols] for j in Rows]
     self.line_buttons[0][0].clicked.connect(lambda: g(self, 0, 0))
     self.line_buttons[1][0].clicked.connect(lambda: g(self, 1, 0))
     self.line_buttons[2][0].clicked.connect(lambda: g(self, 2, 0))
@@ -46,15 +49,20 @@ def buildMainWindow(self):
     self.line_buttons[3][1].clicked.connect(lambda: g(self, 3, 1))
 
     with open(Memory, 'r') as json_file:
-        memory_line = json.load(json_file)['lines']
+        memory_lines = json.load(json_file)['lines']
         for i in Rows:
             for j in Cols:
+                line = memory_lines[i][j]
+                self.lines[i][j].setText(line)
                 self.lines[i][j].setStyleSheet(Colors.LineDark)
-                self.lines[i][j].setText(memory_line[i][j])
                 self.line_buttons[i][j].setStyleSheet(Colors.ButtonDark)
+                
     self.command_line.setText('')
 
 def buildDocumentWindow(self):
+    """
+    Create all the widgets for the document window which are then put in place in the layout function call.
+    """
     header = 'Author your document and compute the hash of your choice.'
     self.headerLabel = QLabel(header)
     self.headerLabel.setFont(QFont('Helvetica', 18))
