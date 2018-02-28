@@ -7,21 +7,21 @@ def layoutMainWindow(self):
     grid = QGridLayout()
     for i in Rows:
         grid.addWidget(self.line_buttons[i][0], i, 0)
-        grid.addWidget(self.lines  [i][0], i, 1)
-        grid.addWidget(self.lines  [i][1], i, 2)
+        grid.addWidget(self.lines[i][0], i, 1)
+        grid.addWidget(self.lines[i][1], i, 2)
         grid.addWidget(self.line_buttons[i][1], i, 3)
     grid.setSpacing(10)
 
-    hbox = QHBoxLayout()
-    hbox.addWidget(self.saveButton)
-    hbox.addWidget(self.command_line)
-    hbox.addWidget(self.hashButton)
+    commandHBox = QHBoxLayout()
+    commandHBox.addWidget(self.saveButton)
+    commandHBox.addWidget(self.command_line)
+    commandHBox.addWidget(self.hashButton)
 
-    vbox = QVBoxLayout()
-    vbox.addLayout(grid)
-    vbox.addLayout(hbox)
+    vboxAll = QVBoxLayout()
+    vboxAll.addLayout(grid)
+    vboxAll.addLayout(commandHBox)
 
-    self.setLayout(vbox)
+    self.setLayout(vboxAll)
 
 
 def layoutDocumentWindow(self):
