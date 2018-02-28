@@ -1,13 +1,13 @@
 # neo-last-will
 
-Use the blockchain to empower old people to administer their legacy in a permanent and lasting way. Enable anyone to use smart technology and feel secure about what happens after they are not around anymore.
+Use the blockchain to empower old people to [administer their own legacy](https://en.wikipedia.org/wiki/Holographic_will) in a permanent and lasting way. Enable anyone to use smart technology and feel secure about what happens after they are not around anymore.
 
 <p align="center">
  <img src="https://i.imgur.com/rVA7z2Q.png" width="500" height="500">
 </p>
 
 ## neo-python-gui-extension
-The neo-python cli can be operated with the graphical user interface. The gui also has a tab to author documents and computate hash which can be used as input to the last-will-contract.
+The [neo-python](https://github.com/CityOfZion/neo-python) cli can be operated with the graphical user interface. The gui also has a tab to author documents and computate hash which can be used as input to the last-will-contract.
 
 Watch the demo video:
 
@@ -38,7 +38,7 @@ Basically, the only difference is the following code branch in `prompt.py`:
 If you're not on a Mac, to have the gui listen to keyboard keys (the Enter and Escape key in particular), you might have to change the OS dependent config file found in the HelperGUI folder. 
 
 ## smart-contract
-Calling the `Main` function of this NEO smart contract enables registering a last will or inheritage hash. It also allows to set heirs and transfers of inheritage, which works exactly like the NEO licensing contracts.
+Calling the `Main(operation, args)` function of [this NEO smart contract written in Python](https://github.com/SaraFarinya/neo-last-will/blob/master/contract/will-contract.py) enables registering a last will or inheritage hash. It also allows to set heirs and transfers of inheritage, which works exactly like the NEO licensing contracts.
 
 Enter an operation and an args list:
   * operation = `QueryInheritage`, `RegisterInheritage`, `SetInheritage`, `CancelInheritage`, `ChangeInheritage`
