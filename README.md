@@ -23,8 +23,8 @@ Screenshot of video:
 
 ### how to install
   * install neo-python and PyQt5
-  * copy `prompty.py` and `gui_memory.json` into neo-python/
-  * copy the HelperGUI directory to neo-python/neo/Prompt
+  * copy `prompty.py` [and](https://github.com/SaraFarinya/neo-last-will/tree/master/neo-python) `gui_memory.json` into neo-python/
+  * copy the [HelperGUI](https://github.com/SaraFarinya/neo-last-will/tree/master/neo-python/neo/Prompt/HelperGUI) directory to neo-python/neo/Prompt
 
 Note: On the last dApp day, a new neo-python branch was merged in, which changed code around the closing of the reactor module. There is also a new line for the gui there, but merging those requires fixing a threading issue first which I have to fix and push later. For those reading this in some time after this day, simply copypaste the lines from the prompt.py - it's just 10 new lines and I've marked those with a tag in a comment `# >>>`. If people like the gui, I can make a PR too. Right now I'm working on more hotkeys and direct SC support functionality. 
 Basically, the only difference is the following code branch in `prompt.py`:
