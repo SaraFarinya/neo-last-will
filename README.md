@@ -41,7 +41,7 @@ Basically, the only difference is the following code branch in `prompt.py`:
        elif command == 'testinvoke':
             self.test_invoke_contract(arguments)
        elif command == 'gui':
-           self.gui_on = True
+            self.gui_on = True
        ...
 ```
 If you're not on a Mac, to have the gui listen to keyboard keys (the Enter and Escape key in particular), you might have to change the OS dependent config file found in the HelperGUI folder. 
