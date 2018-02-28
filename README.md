@@ -44,7 +44,7 @@ Basically, the only difference is the following code branch in `prompt.py`:
             self.gui_on = True
        ...
 ```
-It can also be tested in isolation with the [test script](https://github.com/SaraFarinya/neo-last-will/blob/master/neo-python/neo/Prompt/HelperGUI/Test.py) that emulates the prompt loop. If you're not on a Mac, to have the gui listen to keyboard keys (the Enter and Escape key in particular), you might have to change the OS dependent config file found in the HelperGUI folder. 
+It can also be tested in isolation with the [test script](https://github.com/SaraFarinya/neo-last-will/blob/master/neo-python/neo/Prompt/HelperGUI/Test.py) that emulates the prompt loop. If you're not on a Mac, to have the gui listen to keyboard keys (the Enter and Escape key in particular), you might have to change the OS dependent [config file](https://github.com/SaraFarinya/neo-last-will/blob/master/neo-python/neo/Prompt/HelperGUI/Config.py). 
 
 ## smart-contract
 Calling the `Main(operation, args)` function of [this NEO smart contract written in Python](https://github.com/SaraFarinya/neo-last-will/blob/master/contract/will-contract.py) enables registering a last will or inheritage hash. It also allows to set heirs and transfers of inheritage, which works exactly like the NEO licensing contracts.
