@@ -12,7 +12,7 @@ def layoutMainWindow(self):
         gridShortcut.addWidget(self.line_buttons[i][0], i, 0)
         gridShortcut.addWidget(self.lines[i][0], i, 1)
         gridShortcut.addWidget(self.lines[i][1], i, 2)
-        grid.addWidget(self.line_buttons[i][1], i, 3)
+        gridShortcut.addWidget(self.line_buttons[i][1], i, 3)
     gridShortcut.setSpacing(10)
 
     hboxCommand = QHBoxLayout()
