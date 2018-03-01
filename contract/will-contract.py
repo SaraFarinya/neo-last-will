@@ -58,11 +58,13 @@ def Main(operation, args):
             """
             storage_occupying_name = Get(GetContext, input_inheritage_datum)
 
-            if storage_occupying_name:
-                print(storage_occupying_name)
-            else:
+            if not storage_occupying_name:
                 Put(GetContext, input_inheritage_datum, caller)
-                print("Your inheritage was successfully registered.")
+                
+                print("Your will was successfully registered.")
+                
+            else:
+                print(storage_occupying_name)
 
             return True
 
@@ -73,7 +75,7 @@ def Main(operation, args):
             """
             if authorization_check(input_inheritage_datum):
                 Put(GetContext, legal_entity_with_inheritage_datum, testator_or_heir)
-
+                
                 print("The inheritage was successfully set to legal entity.")
 
                 return True
