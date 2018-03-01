@@ -57,15 +57,14 @@ def Main(operation, args):
             document to the contract caller.
             """
             storage_occupying_name = Get(GetContext, input_inheritage_datum)
-            
-            print(storage_occupying_name)
 
-            if not storage_occupying_name:
+            if storage_occupying_name:
+                print(storage_occupying_name)
+            else:
                 Put(GetContext, input_inheritage_datum, caller)
-
                 print("Your inheritage was successfully registered.")
 
-                return True
+            return True
 
 
         if operation == 'SetInheritage':        
