@@ -3,13 +3,13 @@ from boa.blockchain.vm.Neo.Storage import GetContext, Put, Delete, Get
 from boa.code.builtins import concat
 
 
-def authorization_check(inheritage_key):
+def authorization_check(input_inheritage_hash):
     """
     Use CheckWitness to check matching of caller and person authorized to
     the registered inheritage.
     """
 
-    legal_entity = Get(GetContext, inheritage_key)
+    legal_entity = Get(GetContext, input_inheritage_hash)
 
     legal_entity_is_authorized = CheckWitness(legal_entity) # Boolean
 
@@ -51,14 +51,10 @@ def Main(operation, args):
     if operation != None:
 
 
-        if operation == 'QueryInheritage':
-            legal_entity = Get(GetContext, legal_entity_with_inheritage_hash)
-
-            if legal_entity:
-                return legal_entity
-
-
-        if operation == 'RegisterInheritage':
+        if operation == 'RegisterWillOrInheritage':        
+            """
+            Register will or equity specification document to the contract caller.
+            """
             storage_occupying_hash = Get(GetContext, input_inheritage_hash)
 
             if not storage_occupying_hash:
@@ -69,13 +65,26 @@ def Main(operation, args):
                 return True
 
 
-        if operation == 'SetInheritage':
+        if operation == 'SetInheritage':        
+            """
+            Set a testator_or_heir for a registered equity .
+            """
             if authorization_check(input_inheritage_hash):
                 Put(GetContext, legal_entity_with_inheritage_hash, testator_or_heir)
 
                 print("The inheritage was successfully set to legal entity.")
 
                 return True
+
+
+        if operation == 'QueryInheritage':
+            """
+            Quiery the legal testator_or_heir of an inheritage
+            """
+            legal_testator_or_heir = Get(GetContext, legal_entity_with_inheritage_hash)
+
+            if legal_testator_or_heir:
+                return  legal_testator_or_heir 
 
 
         if operation == 'CancelInheritage':
