@@ -56,11 +56,11 @@ def Main(operation, args):
             Register will or equity specification 
             document to the contract caller.
             """
-            storage_occupying_datum = Get(GetContext, input_inheritage_datum)
+            storage_occupying_name = Get(GetContext, input_inheritage_datum)
             
-            print(storage_occupying_datum)
+            print(storage_occupying_name)
 
-            if not storage_occupying_datum:
+            if not storage_occupying_name:
                 Put(GetContext, input_inheritage_datum, caller)
 
                 print("Your inheritage was successfully registered.")
