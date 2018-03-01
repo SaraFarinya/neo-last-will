@@ -50,7 +50,7 @@ It can also be tested in isolation with the [test script](https://github.com/Sar
 Calling the `Main(operation, args)` function of [this NEO smart contract written in Python](https://github.com/SaraFarinya/neo-last-will/blob/master/contract/will-contract.py) enables registering a last will or inheritage hash. It also allows to set heirs and transfers of inheritage, which works exactly like the NEO licensing contracts.
 
 Enter an operation and an args list:
-  * operation = `QueryInheritage`, `RegisterInheritage`, `SetInheritage`, `CancelInheritage`, `ChangeInheritage`
+  * operation = `RegisterWillOrInheritage`, `SetInheritage`, `QueryInheritage`, `CancelInheritage`, `ChangeInheritage`
   * 1st arg = sender legal entity hash
   * 2nd arg = will or inheritage hash
   * 3nd arg = extra legal entity hash
@@ -60,6 +60,7 @@ The contract was developed and tested with the neo-python-privatenet, but there 
 Please write issues for questions.
 
 ## roadmap
-  * a threading issue with the `reactor` module must be fixed to use the GUI with blocks
+  * include inheritage funds in will contract with verify-trigger logic
   * find most efficient way to store data on blockchain
-  * include inheritage funds in will contract with verify logic
+  * learn about @AbeIgnocious refactoring strategies
+  * a threading issue with the `reactor` module must be fixed to use the GUI with blocks
