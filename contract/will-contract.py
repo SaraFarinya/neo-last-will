@@ -5,8 +5,8 @@ from boa.code.builtins import concat
 
 def authorization_check(input_inheritage_hash):
     """
-    Use CheckWitness to check matching of caller and person authorized to
-    the registered inheritage.
+    Use CheckWitness to check matching of caller and
+    entity authorized to the registered inheritage.
     """
 
     legal_entity = Get(GetContext, input_inheritage_hash)
@@ -23,9 +23,9 @@ def authorization_check(input_inheritage_hash):
 
 def Main(operation, args):
     """
-    Calling the Main function of this NEO smart contract enables registering a
-    last will or inheritage hash. It also allows to set heirs and transfers of
-    inheritage, which works exactly like the NEO licensing contracts.
+    Calling the Main function of this NEO smart contract enables registering
+    a last will or inheritage hash. It also allows to set heirs and transfers
+    of inheritage, which works exactly like the NEO licensing contracts.
     """
 
     caller = args[0] # used with CheckWitness below to conform authorization
@@ -53,7 +53,8 @@ def Main(operation, args):
 
         if operation == 'RegisterWillOrInheritage':        
             """
-            Register will or equity specification document to the contract caller.
+            Register will or equity specification 
+            document to the contract caller.
             """
             storage_occupying_hash = Get(GetContext, input_inheritage_hash)
 
@@ -67,7 +68,7 @@ def Main(operation, args):
 
         if operation == 'SetInheritage':        
             """
-            Set a testator_or_heir for a registered equity .
+            Set a testator_or_heir for a registered equity.
             """
             if authorization_check(input_inheritage_hash):
                 Put(GetContext, legal_entity_with_inheritage_hash, testator_or_heir)
@@ -79,7 +80,7 @@ def Main(operation, args):
 
         if operation == 'QueryInheritage':
             """
-            Quiery the legal testator_or_heir of an inheritage
+            Quiery the legal testator_or_heir of an inheritage.
             """
             legal_testator_or_heir = Get(GetContext, legal_entity_with_inheritage_hash)
 
