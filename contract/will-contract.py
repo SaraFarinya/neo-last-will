@@ -13,10 +13,11 @@ def authorization_check(input_inheritage_datum):
 
     legal_entity_is_authorized = CheckWitness(legal_entity) # Boolean
 
-    if not legal_entity_is_authorized:
-        print('Authorization failed.')
-    else:
+    if legal_entity_is_authorized:
         print('Authorization confirmed.')
+        
+    else:
+        print('Authorization failed.')
 
     return legal_entity_is_authorized
 
@@ -36,6 +37,7 @@ def Main(operation, args):
         return False
 
     print('Action granted.')
+    
     input_inheritage_datum = args[1]
     caller_with_input_will_or_inheritage_datum = concat(caller, input_inheritage_datum)
 
@@ -58,14 +60,14 @@ def Main(operation, args):
             """
             storage_occupying_name = Get(GetContext, input_inheritage_datum)
 
-            if not storage_occupying_name:
+            if storage_occupying_name:
+                print(storage_occupying_name)
+              
+            else:
                 Put(GetContext, input_inheritage_datum, caller)
                 
                 print("Your will was successfully registered.")
                 
-            else:
-                print(storage_occupying_name)
-
             return True
 
 
@@ -86,9 +88,11 @@ def Main(operation, args):
             Quiery the legal testator_or_heir of an inheritage.
             """
             legal_testator_or_heir = Get(GetContext, legal_entity_with_inheritage_datum)
+            
+            print(legal_testator_or_heir)
 
             if legal_testator_or_heir:
-                return  legal_testator_or_heir 
+                return True
 
 
         if operation == 'CancelInheritage':
