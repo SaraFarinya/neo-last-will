@@ -10,7 +10,7 @@ def save_to_memory(self):
         memory['document'] = self.document_window.document_line.toPlainText()
     with open(Memory, 'w') as json_file:
         json.dump(memory, json_file)
-    print('gui> The 8 command lines and the document have been saved.')
+    print('gui> The commands and the document have been saved.')
 
 def open_cryptography_workbench(self):
     if self.gui_on:
