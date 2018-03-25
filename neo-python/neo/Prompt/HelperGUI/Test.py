@@ -7,8 +7,8 @@ from GUI import HelperGUI
 
 class PromptInterfaceTester(HelperGUI):
     """
-    If you don't want to run the GUI with the whole neo-python cli in the 
-    beckground, use this class which emulates the cli-loop.
+    If you don't want to run the GUI with the whole neo-python cli 
+    in the background, use this class which emulates the cli-loop.
     """
     def __init__(self):
         super(PromptInterfaceTester, self).__init__()
